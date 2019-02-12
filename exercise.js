@@ -8,12 +8,9 @@ request
     throw err;
   })
   .on("response", function(response) {
-    var code = response.statusCode;
-    var message = response.statusMessage;
-    var header = response.headers["content-type"];
-    console.log("Response Status Code: " + code);
-    console.log("Response Message: " + message);
-    console.log("Headers" + header);
+    console.log("Response Status Code: " + response.statusCode);
+    console.log("Response Message: " + response.statusMessage);
+    console.log("Headers " + response.headers["content-type"]);
   })
 
   .pipe(fs.createWriteStream("./future.jpg"));
